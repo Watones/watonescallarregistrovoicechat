@@ -1,15 +1,16 @@
 # === WatonesCallarRegistroVoiceChat ===
 
-# Grupo de LuckPerms que se aplica al jugador para silenciarlo en voice chat (debes crearlo en LP)
+# Grupo de LuckPerms que se aplica al jugador para silenciarlo en voice chat.
+# Debes crear este grupo en LuckPerms.
 group_name: "mutevoice"
 
-# URL del webhook de Discord
-webhook_url: "https://discord.com/api/webhooks/XXXX/XXXX"
+# URL del webhook de Discord. Si se deja vacio, no se enviaran registros.
+webhook_url: ""
 
 # Nombre de la modalidad (placeholder {modality})
 modality_name: "Survival"
 
-# Anti-spam por jugador (ms) para evitar ráfagas de webhooks
+# Anti-spam por accion y jugador para evitar duplicados de webhook.
 rate_limit_ms_per_target: 1500
 
 # Mensajes en el juego (&-colors)
@@ -17,33 +18,33 @@ messages:
   prefix: "&4&lWATONES &8| &r"
   usage_callar: "&cUso: &7/callar <jugador>"
   usage_descallar: "&cUso: &7/descallar <jugador>"
-  muted: "&a✔ Jugador &f%target% &amuteado en voice chat por &e1 día&a."
-  unmuted: "&a✔ Mute de voice chat retirado de &f%target%&a."
+  muted: "&aJugador &f%target% &amuteado en voice chat por &e1 dia&a."
+  unmuted: "&aMute de voice chat retirado de &f%target%&a."
   no_perm: "&cNo tienes permiso."
-  not_found: "&cNo encontré al jugador &f%target%&c."
-  error: "&cOcurrió un error, intenta nuevamente."
+  not_found: "&cNo encontre al jugador &f%target%&c."
+  error: "&cOcurrio un error, intenta nuevamente."
 
 # === Discord ===
 discord:
   use_embeds: true
 
-  # (Opcional) Nombre e icono del bot que publica el webhook
-  username: "Moderación Watones"
+  # Nombre e icono del bot que publica el webhook
+  username: "Moderacion Watones"
   avatar_url: ""
 
-  # Si use_embeds=false, se usa este template de texto plano
+  # Si use_embeds=false, se usa este template de texto plano.
   # Placeholders: {action},{staff},{target},{duration},{timestamp},{modality}
-  content_template: "**[{action}]** Staff: {staff} → Jugador: {target} (duración: {duration}) • {modality} • {timestamp}"
+  content_template: "**[{action}]** Staff: {staff} -> Jugador: {target} (duracion: {duration}) | {modality} | {timestamp}"
 
-  # Config de embed (si use_embeds=true)
+  # Config del embed si use_embeds=true
   embed:
     title: "Voice Chat {action}"
-    description: "Registro de moderación • Modalidad: {modality}"
+    description: "Registro de moderacion | Modalidad: {modality}"
     # Color (HEX '#RRGGBB' o INT)
     color: "#FF0044"
-    footer: "Watones • {timestamp}"
+    footer: "Watones | {timestamp}"
     fields:
-      - name: "Acción"
+      - name: "Accion"
         value: "{action}"
         inline: true
       - name: "Staff"
@@ -52,6 +53,6 @@ discord:
       - name: "Jugador"
         value: "{target}"
         inline: true
-      - name: "Duración"
+      - name: "Duracion"
         value: "{duration}"
         inline: true

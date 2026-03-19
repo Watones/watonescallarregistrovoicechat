@@ -5,7 +5,7 @@
 
     <groupId>com.watones.minecraft</groupId>
     <artifactId>watonescallarregistrovoicechat</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>WatonesCallarRegistroVoiceChat</name>
     <description>Mute voice chat (1d) via LuckPerms group and Discord webhook</description>
 
@@ -13,6 +13,8 @@
         <maven.compiler.release>21</maven.compiler.release>
         <paper.api.version>1.21.1-R0.1-SNAPSHOT</paper.api.version>
         <luckperms.api.version>5.4</luckperms.api.version>
+        <junit.version>5.10.2</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <!-- Repositorios -->
@@ -49,6 +51,13 @@
             <version>${luckperms.api.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <!-- Plugins de build -->
@@ -61,6 +70,11 @@
                 <configuration>
                     <release>${maven.compiler.release}</release>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
             </plugin>
 
             <!-- Empaquetado con Shade -->

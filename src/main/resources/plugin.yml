@@ -1,13 +1,13 @@
 name: WatonesCallarRegistroVoiceChat
 main: com.watones.minecraft.watonescallarregistrovoicechat.WatonesCallarRegistroVoiceChat
-version: 1.0.0
-api-version: '1.20'
+version: 1.1.0
+api-version: '1.21'
 authors: [Watones]
 depend: [LuckPerms]
 
 commands:
   callar:
-    description: Silencia el voice chat del jugador por 1 día.
+    description: Silencia el voice chat del jugador por 1 dia.
     usage: /callar <jugador>
     permission: watonescallarregistrovoicechat.srmod
   descallar:
