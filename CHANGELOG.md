@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+- Build limpio del plugin con la version solicitada para distribucion.
+- Se mantienen las mejoras de arquitectura, validacion y pruebas introducidas en la iteracion actual.
+
 ## 1.1.0
 - Refactor interno para separar config, LuckPerms y webhook.
 - Resolucion de jugadores mas segura usando jugador online, cache local o UUID conocido en LuckPerms.

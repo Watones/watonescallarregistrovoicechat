@@ -5,7 +5,7 @@
 
     <groupId>com.watones.minecraft</groupId>
     <artifactId>watonescallarregistrovoicechat</artifactId>
-    <version>1.1.0</version>
+    <version>1.0.1</version>
     <name>WatonesCallarRegistroVoiceChat</name>
     <description>Mute voice chat (1d) via LuckPerms group and Discord webhook</description>
 
@@ -90,6 +90,24 @@
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <delete file="${project.build.directory}/original-${project.build.finalName}.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
